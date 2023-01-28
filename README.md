@@ -1,6 +1,6 @@
 # Win2WSL
 
-Repository with helper scripts for developers working on Windows with a WSL backend for Linux development.
+`Win2WSl` is a collection of helper scripts for developers working on Windows with a WSL backend for Linux development. Some things like different path naming in Windows in WSL and their corresponding paths in WSL can be confusing, so we developed these tools to circumvent that.
 
 ---
 
