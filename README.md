@@ -12,5 +12,10 @@ Repository with helper scripts for developers working on Windows with a WSL back
 
 ## winpath 
 
-The winpath tool converst Windows paths to their WSL equivalent like this below:
+The `winpath` tool converst Windows paths to their WSL equivalent like this below:
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/14185207/215278845-7c121263-d095-400a-8aa0-5e7f7815ffef.png" alt="Sublime's custom image" width="500"/>
+</p>
+
 
