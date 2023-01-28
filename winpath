@@ -1,0 +1,19 @@
+#!/usr/bin/python3
+
+import sys
+
+# check that we have exactly one argument (the path)
+if len(sys.argv) != 2:
+    print("Usage: winpath path")
+    sys.exit(1)
+
+# extract drive name from windows path
+driveName = sys.argv[1][0:1]
+
+# change backslash to forward slash
+path = sys.argv[1].replace("\\", "/")
+
+# construct linux path
+path = "/mnt/" + driveName.lower() + path[2:] 
+
+print(path)
