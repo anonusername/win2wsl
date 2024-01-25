@@ -1,10 +1,15 @@
 #!/usr/bin/python3
 
 import sys
-
-# check that we have exactly one argument (the path)
-if len(sys.argv) != 2:
-    print("Usage: winpath path")
+#
+# check that we have at least one argument (the path and all other parts of the path)
+# C:\my files\utility\web dev\ does not count as one argument because of the spaces.
+#
+# The program will continue to read any arguments, assuming they are all parts of the same path and then combine them
+# The path used as an example above should be the entire string surround by single quotes so it is considered as a literal string.
+# C:\my files\utility\web dev\ should turn into '/mnt/c/my files/utility/web dev/'
+if len(sys.argv) < 2:
+    print("Usage: winpath pathFrag1 [pathFrag3 pathFrag3 ...]")
     sys.exit(1)
 
 # extract drive name from windows path
@@ -15,5 +20,10 @@ path = sys.argv[1].replace("\\", "/")
 
 # construct linux path
 path = "/mnt/" + driveName.lower() + path[2:] 
+# concatenate all arguments into a single windows path
+windows_path = " ".join(sys.argv[1:])
+
+# surround the windows path with single quotes
+path = "'" + windows_path + "'"
 
 print(path)
